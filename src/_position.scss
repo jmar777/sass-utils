@@ -1,0 +1,57 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:meta';
+
+@function _is-valid-length($value) {
+    @return $value == 0
+        or $value == 'auto'
+        or $value == 'initial'
+        or $value == 'inherit'
+        or meta.type-of($value) == 'number'
+        and not math.is-unitless($value);
+}
+
+@mixin position($position, $args: ()) {
+    $offsets: top right bottom left;
+    position: $position;
+
+    @each $offset in $offsets {
+        $index: list.index($args, $offset);
+
+        @if $index {
+            @if $index == list.length($args) {
+                #{$offset}: 0;
+            } @else {
+                $next: list.nth($args, $index + 1);
+
+                @if _is-valid-length($next) {
+                    #{$offset}: $next;
+                } @else if list.index($offsets, $next) {
+                    #{$offset}: 0;
+                } @else {
+                    @warn "Invalid value '#{$next}' for offset '#{$offset}'.";
+                }
+            }
+        }
+    }
+}
+
+@mixin absolute($args: ()) {
+    @include position(absolute, $args);
+}
+
+@mixin absoluteFill() {
+    @include absolute(top right bottom left);
+    width: 100%;
+    height: 100%;
+}
+
+@mixin fixed($args: ()) {
+    @include position(fixed, $args);
+}
+
+@mixin fixedFill() {
+    @include fixed(top right bottom left);
+    width: 100%;
+    height: 100%;
+}

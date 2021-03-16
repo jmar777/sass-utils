@@ -1,0 +1,19 @@
+@use 'true' as *;
+@use 'src/reset-list' as *;
+
+@include describe('TEST: fluid-scale') {
+    @include it('font-size') {
+        @include assert {
+            @include output {
+                @include reset-list();
+            }
+
+            @include expect {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+        }
+    }
+}
+

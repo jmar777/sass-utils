@@ -1,0 +1,17 @@
+@use 'true' as *;
+@use 'src/fluid-scale' as *;
+
+@include describe('TEST: fluid-scale') {
+    @include it('font-size') {
+        @include assert {
+            @include output {
+                font-size: fluid-scale((56px, 66px));
+            }
+
+            @include expect {
+                font-size: clamp(56px, calc(53.1621621622px + 0.6756756757vw), 66px);
+            }
+        }
+    }
+}
+
