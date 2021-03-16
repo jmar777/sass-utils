@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "author": "bingumd <bingumd@gmail.com>",
     "description": "Sass plugin to add a collection of mixins, helpers and tools for your saas.",
-    "main": "main.scss",
+    "main": "index.scss",
     "homepage": "https://github.com/bingumd/sass-utils",
     "license": "MIT",
     "repository": "bingumd/sass-utils",
