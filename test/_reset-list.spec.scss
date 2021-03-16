@@ -1,8 +1,8 @@
 @use 'true' as *;
 @use 'src/reset-list' as *;
 
-@include describe('TEST: fluid-scale') {
-    @include it('font-size') {
+@include describe('TEST: reset-list') {
+    @include it('reset-list') {
         @include assert {
             @include output {
                 @include reset-list();

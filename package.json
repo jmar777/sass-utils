@@ -1,6 +1,6 @@
 {
     "name": "@bingumd/sass-utils",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "author": "bingumd <bingumd@gmail.com>",
     "description": "Sass plugin to add a collection of mixins, helpers and tools for your saas.",
     "main": "index.scss",

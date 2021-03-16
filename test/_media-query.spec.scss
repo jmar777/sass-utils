@@ -1,0 +1,45 @@
+@use 'true' as *;
+@use 'src/media-query' as *;
+
+@include describe('TEST: media-query') {
+    @include it('medium') {
+        @include assert {
+            @include output {
+                @include mq('md') {
+                    body {
+                        margin: 100px;
+                    }
+                }
+            }
+
+            @include expect {
+                @media (min-width: 768px) {
+                    body {
+                        margin: 100px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include it('large') {
+        @include assert {
+            @include output {
+                @include mq('lg') {
+                    body {
+                        margin: 200px;
+                    }
+                }
+            }
+
+            @include expect {
+                @media (min-width: 1024px) {
+                    body {
+                        margin: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
