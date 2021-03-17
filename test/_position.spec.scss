@@ -1,66 +1,44 @@
-@use 'true' as *;
-@use 'src/position' as *;
+@use 'true';
+@use 'src/position' as util;
 
-@include describe('TEST: position') {
-    @include it('position absolute') {
-        @include assert {
-            @include output {
-                @include absolute(right 33.333%);
+@include true.describe('TEST: POSITIOM') {
+    @include true.it('position absolute') {
+        @include true.assert {
+            @include true.output {
+                @include util.absolute(right 33.333%);
             }
 
-            @include expect {
+            @include true.expect {
                 position: absolute;
                 right: 33.333%;
             }
         }
     }
 
-    @include it('position fixed') {
-        @include assert {
-            @include output {
-                @include fixed(top bottom 5px);
+    @include true.it('position fixed') {
+        @include true.assert {
+            @include true.output {
+                @include util.fixed(top bottom 5px left);
             }
 
-            @include expect {
+            @include true.expect {
                 position: fixed;
                 top: 0;
                 bottom: 5px;
+                left: 0;
             }
         }
     }
 
-    @include it('position absoluteFill') {
-        @include assert {
-            @include output {
-                @include absoluteFill();
+    @include true.it('position relative') {
+        @include true.assert {
+            @include true.output {
+                @include util.position(relative, bottom -10px);
             }
 
-            @include expect {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
-    @include it('position fixedFill') {
-        @include assert {
-            @include output {
-                @include fixedFill();
-            }
-
-            @include expect {
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+            @include true.expect {
+                position: relative;
+                bottom: -10px;
             }
         }
     }

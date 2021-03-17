@@ -1,17 +1,28 @@
-@use 'true' as *;
-@use 'src/fluid-scale' as *;
+@use 'true';
+@use 'src/fluid-scale' as util;
 
-@include describe('TEST: fluid-scale') {
-    @include it('font-size') {
-        @include assert {
-            @include output {
-                font-size: fluid-scale((56px, 66px));
+@include true.describe('TEST: FLUID SCALE') {
+    @include true.it('scale font-size') {
+        @include true.assert {
+            @include true.output {
+                font-size: util.fluid-scale((56px, 66px));
             }
 
-            @include expect {
+            @include true.expect {
                 font-size: clamp(56px, calc(53.1621621622px + 0.6756756757vw), 66px);
             }
         }
     }
-}
 
+    @include true.it('scale padding') {
+        @include true.assert {
+            @include true.output {
+                padding: util.fluid-scale((60px, 120px));
+            }
+
+            @include true.expect {
+                padding: clamp(60px, calc(42.972972973px + 4.0540540541vw), 120px);
+            }
+        }
+    }
+}

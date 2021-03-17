@@ -42,8 +42,6 @@
 
 @mixin absoluteFill() {
     @include absolute(top right bottom left);
-    width: 100%;
-    height: 100%;
 }
 
 @mixin fixed($args: ()) {
@@ -52,6 +50,4 @@
 
 @mixin fixedFill() {
     @include fixed(top right bottom left);
-    width: 100%;
-    height: 100%;
 }

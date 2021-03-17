@@ -1,18 +1,18 @@
-@use 'true' as *;
-@use 'src/media-query' as *;
+@use 'true';
+@use 'src/media-query' as util;
 
-@include describe('TEST: media-query') {
-    @include it('medium') {
-        @include assert {
-            @include output {
-                @include mq('md') {
+@include true.describe('TEST: MEDIA QUERY') {
+    @include true.it('mq medium') {
+        @include true.assert {
+            @include true.output {
+                @include util.mq('md') {
                     body {
                         margin: 100px;
                     }
                 }
             }
 
-            @include expect {
+            @include true.expect {
                 @media (min-width: 768px) {
                     body {
                         margin: 100px;
@@ -22,17 +22,17 @@
         }
     }
 
-    @include it('large') {
-        @include assert {
-            @include output {
-                @include mq('lg') {
+    @include true.it('mq large') {
+        @include true.assert {
+            @include true.output {
+                @include util.mq('lg') {
                     body {
                         margin: 200px;
                     }
                 }
             }
 
-            @include expect {
+            @include true.expect {
                 @media (min-width: 1024px) {
                     body {
                         margin: 200px;
@@ -42,4 +42,3 @@
         }
     }
 }
-

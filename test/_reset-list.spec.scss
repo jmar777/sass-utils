@@ -1,14 +1,14 @@
-@use 'true' as *;
-@use 'src/reset-list' as *;
+@use 'true';
+@use 'src/reset-list' as util;
 
-@include describe('TEST: reset-list') {
-    @include it('reset-list') {
-        @include assert {
-            @include output {
-                @include reset-list();
+@include true.describe('TEST: RESET LIST') {
+    @include true.it('reset-list') {
+        @include true.assert {
+            @include true.output {
+                @include util.reset-list();
             }
 
-            @include expect {
+            @include true.expect {
                 margin: 0;
                 padding: 0;
                 list-style: none;
@@ -16,4 +16,3 @@
         }
     }
 }
-

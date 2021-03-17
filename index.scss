@@ -1,5 +1,6 @@
 @forward 'config';
-@forward 'src/position';
-@forward 'src/fluid-scale';
-@forward 'src/reset-list';
-@forward 'src/media-query';
+
+@use 'src/position';
+@use 'src/fluid-scale';
+@use 'src/reset-list';
+@use 'src/media-query';
