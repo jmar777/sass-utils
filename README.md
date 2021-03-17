@@ -16,7 +16,7 @@ yarn add @bingumd/sass-utils
 
 ### Example
 
-```sass
+```scss
 @use '@bingumd/sass-utils' as util;
 
 body {
