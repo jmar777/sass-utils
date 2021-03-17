@@ -10,13 +10,13 @@ yarn add @bingumd/sass-utils
 
 ### Usage
 
-```json
+```bash
 @use '@bingumd/sass-utils' as util;
 ```
 
 ### Example
 
-```json
+```sass
 @use '@bingumd/sass-utils' as util;
 
 body {
