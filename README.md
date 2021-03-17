@@ -10,7 +10,7 @@ yarn add @bingumd/sass-utils
 
 ### Usage
 
-```bash
+```scss
 @use '@bingumd/sass-utils' as util;
 ```
 
