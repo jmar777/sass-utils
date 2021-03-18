@@ -23,17 +23,17 @@ body {
     font-size: util.fluid-scale((16px, 18px));
     line-height: 1.8;
     
-    util.mq('md') {
+    @include util.mq('md') {
         line-height: 2;
     }
 }
 
 ul {
-    util.reset-list();
+    @include util.reset-list();
 }
 
 section {
-    @use absolute(top right 50%);
+    @include util.absolute(top right 50%);
 }
 ```
 
