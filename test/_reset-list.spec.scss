@@ -1,5 +1,5 @@
 @use 'true';
-@use 'src/reset-list' as util;
+@use 'index.scss' as util;
 
 @include true.describe('TEST: RESET LIST') {
     @include true.it('reset-list') {

@@ -1,5 +1,5 @@
 @use 'true';
-@use 'src/fluid-scale' as util;
+@use 'index.scss' as util;
 
 @include true.describe('TEST: FLUID SCALE') {
     @include true.it('scale font-size') {

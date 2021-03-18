@@ -1,5 +1,5 @@
 @use 'true';
-@use 'src/media-query' as util;
+@use 'index.scss' as util;
 
 @include true.describe('TEST: MEDIA QUERY') {
     @include true.it('mq medium') {
