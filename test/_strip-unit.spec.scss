@@ -1,0 +1,10 @@
+@use 'true';
+@use 'index.scss' as util;
+
+@include true.describe('TEST: STRIP UNIT') {
+    @include true.it('strip-unit') {
+        @include true.assert-equal(util.strip-unit(10px), 10);
+        @include true.assert-equal(util.strip-unit(33.333%), 33.333);
+        @include true.assert-equal(util.strip-unit(50vh), 50);
+    }
+}
