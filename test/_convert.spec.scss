@@ -1,0 +1,13 @@
+@use 'true';
+@use 'index.scss' as util;
+
+@include true.describe('TEST: CONVERT') {
+    @include true.it('convert') {
+        @include true.assert-equal(util.to-px(18%), 18px);
+        @include true.assert-equal(util.to-rem(33.333%), 33.333rem);
+        @include true.assert-equal(util.to-em(3), 3em);
+        @include true.assert-equal(util.to-pc(50px), 50%);
+        @include true.assert-equal(util.to-vw(110px), 100vw);
+        @include true.assert-equal(util.to-vh(10), 10vh);
+    }
+}

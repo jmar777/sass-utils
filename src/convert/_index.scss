@@ -1,0 +1,27 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// STRIP UNIT
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+@function to-px($number) {
+	@return $number + 0px;
+}
+
+@function to-rem($number) {
+	@return $number + 0rem;
+}
+
+@function to-em($number) {
+	@return $number + 0em;
+}
+
+@function to-pc($number) {
+	@return $number + 0%;
+}
+
+@function to-vw($number) {
+	@return $number + 0vw;
+}
+
+@function to-vh($number) {
+	@return $number + 0vh;
+}

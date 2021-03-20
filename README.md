@@ -27,6 +27,7 @@ yarn install @bingumd/sass-utils
 * [position](src/position/README.md)
 * [reset-list](src/reset-list/README.md)
 * [strip-unit](src/strip-unit/README.md)
+* [convert](src/convert/README.md)
 
 ### License
 This project is licensed under the [MIT](./LICENSE) License
