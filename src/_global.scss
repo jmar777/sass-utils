@@ -1,0 +1,15 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// GLOBALS
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Declare the global values.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Default breakpoints.
+$breakpoints: (
+    'md': 768px,
+    'lg': 1024px,
+) !default;
+
+// Default fluid breakpoints.
+$breakpoint-min: 420px !default;
+$breakpoint-max: 1900px !default;

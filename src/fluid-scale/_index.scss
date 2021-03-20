@@ -1,15 +1,20 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// FLUID SCALE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Linearly scale CSS properties with units
+// based on the viewport defined in `global.scss`.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
 @use 'sass:meta';
 @use 'sass:list';
-@use '../config';
+@use '../global';
 
-@function fluid-scale($value) {
+@function fluid-scale($value, $min-vw: global.$breakpoint-min, $max-vw: global.$breakpoint-max) {
     @if $value and meta.type-of($value) == number {
         @return $value;
     } @else if meta.type-of($value) == list and list.length($value) == 2 {
         $min: list.nth($value, 1);
         $max: list.nth($value, 2);
-        $min-vw: config.$breakpoint-min;
-        $max-vw: config.$breakpoint-max;
 
         $factor: 1 / ($max-vw - $min-vw) * ($max - $min);
         $calc-value: calc(#{$min - ($min-vw * $factor)} + #{100vw * $factor});

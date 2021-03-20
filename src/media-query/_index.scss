@@ -1,0 +1,23 @@
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Media Query
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Apply a media query defined in `global.$breakpoints`.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+@use 'sass:map';
+@use 'sass:meta';
+@use '../global';
+
+@mixin mq($value) {
+    @if map.has-key(global.$breakpoints, $value) {
+        @media (min-width: map.get(global.$breakpoints, $value)) {
+            @content;
+        }
+    } @else if meta.type-of($value) == number {
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @error "'#{$value}' is not a valid @media.";
+    }
+}
