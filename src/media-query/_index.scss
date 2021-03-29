@@ -47,6 +47,6 @@
     }
 }
 
-@if global.$isDev {
+@if global.$show-mq {
     @include show-mq;
 }
