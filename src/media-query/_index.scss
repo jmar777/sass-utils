@@ -8,8 +8,6 @@
 @use 'sass:meta';
 @use '../global';
 
-$isDev: false !default;
-
 @mixin mq($value) {
     @if map.has-key(global.$breakpoints, $value) {
         @media (min-width: map.get(global.$breakpoints, $value)) {
@@ -47,6 +45,6 @@ $isDev: false !default;
     }
 }
 
-@if $isDev {
+@if global.$isDev {
     @include show-mq;
 }

@@ -4,6 +4,9 @@
 // Declare the global values.
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+// Get the development mode.
+$isDev: false !default;
+
 // Default breakpoints.
 $breakpoints: (
     'md': 768px,
