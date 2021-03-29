@@ -8,6 +8,8 @@
 @use 'sass:meta';
 @use '../global';
 
+$isDev: false !default;
+
 @mixin mq($value) {
     @if map.has-key(global.$breakpoints, $value) {
         @media (min-width: map.get(global.$breakpoints, $value)) {
@@ -20,4 +22,31 @@
     } @else {
         @error "'#{$value}' is not a valid @media.";
     }
+}
+
+@mixin show-mq() {
+    body:before {
+        content: "ALL";
+        background-color: #FCF8E3;
+        border-bottom: 1px solid #FBEED5;
+        border-left: 1px solid #FBEED5;
+        color: #C09853;
+        font: small-caption;
+        padding: 3px 6px;
+        pointer-events: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 100;
+
+        @each $bp-name, $bp-value in global.$breakpoints {
+            @include mq($bp-name) {
+                content: "#{$bp-name}";
+            }
+        }
+    }
+}
+
+@if $isDev {
+    @include show-mq;
 }

@@ -1,13 +1,24 @@
 # Editors config
+.settings
+.project
 .vscode
 .idea
 
-# Logs
+# Node.js
+node_modules
 yarn-debug.log*
 yarn-error.log*
 
-# Dependency directories
-node_modules
-
 # Output directory
 dist
+
+# Windows
+Thumbs.db
+
+# Mac OS X
+.DS_Store
+._.*
+._*
+
+# Misc
+*.zip
